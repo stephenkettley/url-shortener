@@ -1,4 +1,18 @@
+import { useState } from "react";
+import MobileMenu from "./MobileMenu";
+
 const Navbar = () => {
+  const [mobile, setMobile] = useState(false);
+  let classes;
+  if (mobile) {
+    classes = "block hamburger open lg:hidden focus:outline-none";
+  } else {
+    classes = "block hamburger lg:hidden focus:outline-none";
+  }
+
+  function handleClick() {
+    setMobile(!mobile);
+  }
   return (
     <nav className="relative container mx-auto p-6">
       <div className="flex items-center justify-between">
@@ -25,7 +39,18 @@ const Navbar = () => {
             Sign Up
           </a>
         </div>
+        <button
+          id="menu-btn"
+          className={classes}
+          type="button"
+          onClick={handleClick}
+        >
+          <span className="hamburger-top"></span>
+          <span className="hamburger-middle"></span>
+          <span className="hamburger-bottom"></span>
+        </button>
       </div>
+      <MobileMenu showing={mobile}></MobileMenu>
     </nav>
   );
 };
