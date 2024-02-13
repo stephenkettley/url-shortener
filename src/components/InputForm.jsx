@@ -14,7 +14,7 @@ const InputForm = ({ onSubmit }) => {
       onSubmit={submitForm}
     >
       <input
-        type="text"
+        type="url"
         className="flex-1 p-3 border-2 rounded-lg placeholder-yellow-500 focus:outline-none"
         placeholder="Shorten a link here"
         id="link-input"
