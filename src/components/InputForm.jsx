@@ -37,7 +37,7 @@ const InputForm = ({ onSubmit }) => {
         >
           Shorten It!
         </button>
-        <div className="absolute left-7 bottom-3 text-red text-md">
+        <div className="absolute left-10 bottom-3 text-red text-md md:left-7">
           {errors.link && <p>{`*${errors.link.message}`}</p>}
         </div>
       </form>
